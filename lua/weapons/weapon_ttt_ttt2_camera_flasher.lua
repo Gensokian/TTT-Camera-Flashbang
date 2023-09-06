@@ -36,7 +36,7 @@ SWEP.EquipMenuData = {
 SWEP.AllowDrop = true
 SWEP.IsSilent = false
 SWEP.NoSights = false
-SWEP.AutoSpawnable = true
+SWEP.AutoSpawnable = false
 SWEP.HoldType = "camera"
 SWEP.Primary.ClipSize = 3
 SWEP.Primary.DefaultClip = 3
@@ -93,6 +93,7 @@ function SWEP:PrimaryAttack()
             and traceEnt:GetObserverMode() == OBS_MODE_NONE
         then
             traceEnt:ScreenFade(SCREENFADE.IN, color_white, .3, 1 )
+            traceEnt:TakeDamage( 5, ply, self)
         end
 	end
 
